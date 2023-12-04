@@ -46,6 +46,7 @@ public class AddNewMember extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        add_btn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add A Member");
@@ -109,13 +110,12 @@ public class AddNewMember extends javax.swing.JFrame {
         rbtn_public.setSelected(true);
         rbtn_public.setText("Public coach");
 
-        add_btn.setBackground(new java.awt.Color(0, 0, 204));
         add_btn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        add_btn.setForeground(new java.awt.Color(255, 255, 255));
-        add_btn.setText("Add");
+        add_btn.setForeground(new java.awt.Color(0, 0, 204));
+        add_btn.setText("Members");
         add_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addActionButton(evt);
+                Members_btn(evt);
             }
         });
 
@@ -127,13 +127,21 @@ public class AddNewMember extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText(":");
 
-        back_btn.setBackground(new java.awt.Color(0, 0, 204));
         back_btn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        back_btn.setForeground(new java.awt.Color(0, 0, 204));
         back_btn.setText("back");
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Members/dumbell.jpeg"))); // NOI18N
         jLabel11.setText("jLabel11");
+
+        add_btn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        add_btn1.setForeground(new java.awt.Color(0, 0, 204));
+        add_btn1.setText("Add");
+        add_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionButton(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,7 +168,7 @@ public class AddNewMember extends javax.swing.JFrame {
                                     .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 102, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(rbtn_private)
@@ -168,7 +176,7 @@ public class AddNewMember extends javax.swing.JFrame {
                                                 .addComponent(rbtn_public))
                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(rbtn_male, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                                    .addComponent(rbtn_male, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addGap(50, 50, 50)
                                                     .addComponent(rbtn_female, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGap(32, 32, 32))
@@ -189,7 +197,9 @@ public class AddNewMember extends javax.swing.JFrame {
                                         .addGap(10, 10, 10)
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                                        .addComponent(add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(add_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(add_btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(30, 30, 30))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -237,6 +247,8 @@ public class AddNewMember extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(add_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,7 +279,7 @@ public class AddNewMember extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -288,7 +300,7 @@ public class AddNewMember extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -316,15 +328,18 @@ public class AddNewMember extends javax.swing.JFrame {
             } else {
                 subType = "Public training";
             }
-            JOptionPane.showMessageDialog(rootPane, "Member added successfully");
-            close();
-            membersScreen newMember = new membersScreen();
-            newMember.setVisible(true);
+           
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Member failed to add");
             
+            JOptionPane.showMessageDialog(rootPane, "Member failed to add");
         }
     }//GEN-LAST:event_addActionButton
+
+    private void Members_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Members_btn
+         close();
+            Members newMember = new Members();
+            newMember.setVisible(true);
+    }//GEN-LAST:event_Members_btn
     public void  close() {
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
@@ -340,6 +355,7 @@ public class AddNewMember extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_btn;
+    private javax.swing.JButton add_btn1;
     private javax.swing.JButton back_btn;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
