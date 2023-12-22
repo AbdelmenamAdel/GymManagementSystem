@@ -4,8 +4,13 @@
  */
 package Members;
 
+import entities.AdminModel;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -52,6 +57,7 @@ public class AddAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GYM_SYSTEM");
+        setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(250, 250, 250));
 
@@ -82,7 +88,7 @@ public class AddAdmin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add New Admin");
+        jLabel1.setText("Add Admin");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Password :");
@@ -223,26 +229,38 @@ public class AddAdmin extends javax.swing.JFrame {
 
     private void Valid_or_No(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Valid_or_No
         // TODO add your handling code here:
+        boolean isFound = false;
+
         String Name=TXT_NAME.getText();
         String Phone=TXT_PHONE.getText();
         String Address=TXT_ADDRESS.getText();
         String ID=TXT_ID.getText();
         String Password1=TXT_Password.getText();
         String Password2=TXT_Confirm.getText();
-        boolean F1,F2,F3,F4,F5,F6;
-        F1=F2=F3=F4=F5=F6=true;
+        AdminModel admin = new AdminModel(Name, ID, Phone, Password1, Address);
+        
+//             try {
+//            checkAdmin(Integer.parseInt(ID));
+//            isFound = true;
+//            JOptionPane.showMessageDialog(null, "this id currently used!");
+//        } catch (SQLException ex) {}
+//        if (!isFound) {
+//            try {
+//                addAdmin(admin);
+//            } catch (SQLException ex) {
+//                System.out.println("error add");
+//            }    
+//        }
+      
+        boolean F1,F3,F4,F5,F6;
+        F1=F3=F4=F5=F6=true;
         for(int i=0;i<Name.length();i++){
             if(Name.charAt(i)>='0'&&Name.charAt(i)<='9'){
                 F1=false;
-                break;
+              break;
             }
         }
-//        for(int i=0;i<Age.length();i++){
-//            if(!(Age.charAt(i)>='0'&&Age.charAt(i)<='9')){
-//                F2=false;
-//                break;
-//            }
-//        }
+
         if(Phone.length()!=11&&!(Phone.substring(0, 3)=="011"||Phone.substring(0, 3)=="010"||Phone.substring(0, 3)=="012"||Phone.substring(0, 3)=="015")){
             F3=false;
         }else{
@@ -253,7 +271,8 @@ public class AddAdmin extends javax.swing.JFrame {
             }
         }
         }
-           for(int i=0;i<Address.length();i++){
+      
+         for(int i=0;i<Address.length();i++){
             if(Address.charAt(i)>='0'&&Address.charAt(i)<='9'){
                 F4=false;
                 break;
@@ -268,13 +287,30 @@ public class AddAdmin extends javax.swing.JFrame {
           if(Password1!=Password2){
               F6=false;
           }
-        if(F1&&F2&&F3&&F4&&F5&&F6){
+       if(F1&&F3&&F4&&F5&&F6){
 //            dispose();
         }else{
          JOptionPane.showMessageDialog(this,"Data Of New Admin is Not valid","Failed",0);
         }
+       
+        
+//        PreparedStatement stmt=Connect.preparestatement("insert into AddAdmin(TXT_NAME,TXT_PHONE,TXT-ADDRESS,TXT_ID,TXT_Password,TXT_Confirm)") ;
+               
     }//GEN-LAST:event_Valid_or_No
- public void  close() {
+//  private void addAdmin(AdminModel a) throws SQLException{
+//        PreparedStatement stmt = con.prepareStatement("insert into admin(id, name, phone, address, password) values (?, ?, ?, ?, ?)");
+//        stmt.setInt(1, Integer.parseInt(a.id));
+//        stmt.setString(2, a.name);
+//        stmt.setString(3, a.phone);
+//        stmt.setString(4, a.address);
+//        System.out.println("address");
+//        System.out.println(a.address);
+//        stmt.setString(5, a.password);
+//        stmt.executeUpdate();
+//        System.out.println("added successfully");
+//    }
+   
+    public void  close() {
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }

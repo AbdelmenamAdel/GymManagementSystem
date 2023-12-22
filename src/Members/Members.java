@@ -20,7 +20,10 @@ public class Members extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    public Members(MemberModel model){}
+    public Members(MemberModel model){
+    initComponents();
+    this.setLocationRelativeTo(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +45,7 @@ public class Members extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(250, 250, 250));
 
@@ -75,6 +79,11 @@ public class Members extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 204));
         jButton2.setText("back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back(evt);
+            }
+        });
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText(" ");
@@ -198,6 +207,13 @@ public class Members extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void back(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back
+        // TODO add your handling code here:
+        close();
+        HomeScreen home = new HomeScreen();
+        home.setVisible(true);
+    }//GEN-LAST:event_back
 
     /**
      * @param args the command line arguments
